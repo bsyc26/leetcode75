@@ -7,45 +7,49 @@ import java.util.LinkedList;
 public class NearestExitFromEntranceInMaze { // leetcode 1926
     // fields
     private final int[][] DIRS = new int[][]{ {1, 0}, {-1, 0}, {0, 1}, {0, -1} };
-    // bfs + matrix
+    // bfs + adj-mat
     public int nearestExit(char[][] maze, int[] entrance) { // T: O(MN), S: O(M+N).
-        // variables
-        int startRow = entrance[0];
-        int startCol = entrance[1];
-        maze[startRow][startCol] = '+';
-        // return
-        return bfs(maze, startRow, startCol);
-    }
-    private int bfs(char[][] mat, int row, int col) {
         // constants
-        int M = mat.length;
-        int N = mat[0].length;
+        int M = maze.length;
+        int N = maze[0].length;
         // data structures
         Queue<int[]> q = new LinkedList<>();
-        q.offer(new int[]{ row, col, 0 }); // 0 is the dist from entrance
+        boolean[][] visited = new boolean[M][N];
+        // variables
+        int step = 0;
+        // init
+        int startRow = entrance[0];
+        int startCol = entrance[1];
+        q.offer(new int[]{startRow, startCol});
+        visited[startRow][startCol] = true;
         // bfs
         while (!q.isEmpty()) {
-            // poll
-            int[] cur = q.poll();
-            int curRow = cur[0];
-            int curCol = cur[1];
-            int curDist = cur[2];
-            // loop neighbors
-            for (int[] DIR : DIRS) {
-                int nextRow = curRow + DIR[0];
-                int nextCol = curCol + DIR[1];
-                if (nextRow >= 0 && nextRow < M
-                        && nextCol >= 0 && nextCol < N
-                        && mat[nextRow][nextCol] == '.') { // next exists empty cell
-                    if (nextRow == 0 || nextRow == M-1
-                            || nextCol == 0 || nextCol == N-1) // next is exit
-                        return 1 + curDist; // found exit
-                    mat[nextRow][nextCol] = '+'; // make visited
-                    q.offer(new int[]{ nextRow, nextCol, 1+curDist });
+            // count level
+            int sz = q.size();
+            ++step;
+            // loop level
+            for (int i = 0; i < sz; i++) {
+                // poll
+                int[] cur = q.poll();
+                int curRow = cur[0];
+                int curCol = cur[1];
+                // dirs up/down/left/right
+                for (int[] DIR : DIRS) {
+                    int adjRow = curRow + DIR[0];
+                    int adjCol = curCol + DIR[1];
+                    if (adjRow < 0 || adjRow >= M 
+                            || adjCol < 0 || adjCol >= N
+                            || visited[adjRow][adjCol] || maze[adjRow][adjCol] == '+')
+                        continue;
+                    if (adjRow == 0 || adjRow == M-1 || adjCol == 0 || adjCol == N-1) // 
+                        return step;
+                    visited[adjRow][adjCol] = true;
+                    // offer
+                    q.offer(new int[]{adjRow, adjCol});
                 }
             }
         }
-        // return fallback
+        // return
         return -1;
     }
 }
