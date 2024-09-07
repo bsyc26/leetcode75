@@ -1,6 +1,6 @@
 /** Find the lowest common ancestor (LCA) of two given nodes in a tree
   * LCA: lowest depth node being the ancestor of both nodes, can be one of themselves */
-public class LowestCommonAncestorOfABinaryTree { // leetcode 236
+public class Solution { // leetcode 236
     // dfs-division + return-values
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) { // T: O(N), S: O(1).
         return dfs(root, p.val, q.val);

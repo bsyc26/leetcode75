@@ -1,6 +1,6 @@
 /** Return the max altitude 
   * gain[i] is the delta between i and i+1, init with altitude 0 */
-public class FindTheHighestAltitude { // leetcode 1732
+public class Solution { // leetcode 1732
     // prefix-sum
     public int largestAltitude(int[] gain) { // T: O(N), S: O(N).
         // constants

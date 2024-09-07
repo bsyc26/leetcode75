@@ -5,28 +5,28 @@ import java.util.LinkedList;
   * senate: String composed of 'R' and 'D'
   * in each round, each senator can do two ops, starting from left to right
   * op1: ban a senator (jump turn); op2: annouce victory if only one party left */
-public class Dota2Senate { // leetcode 649
+public class Solution { // leetcode 649
     // queue:two-queues
     public String predictPartyVictory(String senate) { // T: O(N), S: O(N).
         // constants
         int N = senate.length();
         // data structures
-        Queue<Integer> rq = new LinkedList<>();
-        Queue<Integer> dq = new LinkedList<>();
+        Queue<Integer> qR = new LinkedList<>();
+        Queue<Integer> qD = new LinkedList<>();
         for (int i = 0; i < N; i++) {
-            if (senate.charAt(i) == 'R') rq.add(i);
-            else dq.add(i);
+            if (senate.charAt(i) == 'R') qR.add(i);
+            else qD.add(i);
         }
         // counter turns
-        while (!rq.isEmpty() && !dq.isEmpty()) {
-            int rIdx = rq.poll();
-            int dIdx = dq.poll();
-            if (rIdx < dIdx) // the low ban the high, earn next turn
-                rq.offer(rIdx + N);
+        while (!qR.isEmpty() && !qD.isEmpty()) {
+            int idxR = qR.poll();
+            int idxD = qD.poll();
+            if (idxR < idxD) // the low ban the high, earn next turn
+                qR.offer(idxR + N);
             else
-                dq.offer(dIdx + N);
+                qD.offer(idxD + N);
         }
         // return
-        return rq.isEmtpy() ? "Dire" : "Radiant";
+        return qR.isEmpty() ? "Dire" : "Radiant";
     }
 }

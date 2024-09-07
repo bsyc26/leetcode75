@@ -1,6 +1,6 @@
 /** Return min int k can eat all bananas with h hours
   * piles[i] is num of bananas, k is the bananas-per-hour eating speed (no-overflow) */
-public class KokoEatingBananas { // leetcode 875
+public class Solution { // leetcode 875
     // binary-search
     public int minEatingSpeed(int[] piles, int h) { // T: O(NlogN), S: O(1).
         // constants
@@ -10,7 +10,7 @@ public class KokoEatingBananas { // leetcode 875
         int right = 1; // piles[i] >= 1
         for (int pile : piles)
             right = Math.max(right, pile);
-        // binary-search
+        // binary search
         while (left < right) {
             int mid = left + (right-left)/2;
             int curH = 0;

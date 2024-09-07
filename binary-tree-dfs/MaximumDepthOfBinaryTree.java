@@ -1,5 +1,5 @@
 /** Return max depth of a binary tree (1-indexed) */
-public class MaximumDepthOfBinaryTree { // leetcode 104
+public class Solution { // leetcode 104
     // dfs-division + return-values
     public int maxDepth(TreeNode root) { // T: O(N), S: O(1).
         // edge case

@@ -1,6 +1,6 @@
 /** Return the max water can store
   * height[i] is the height of pillar, two pillars forms a container */
-public class ContainerWithMostWater { // leetcode 11
+public class Solution { // leetcode 11
     // two-pointers:left-right
     public int maxArea(int[] height) { // T: O(N), S: O(1).
         // constants
@@ -9,7 +9,7 @@ public class ContainerWithMostWater { // leetcode 11
         int maxArea = 0;
         int left = 0;
         int right = N-1;
-        // two-pointers
+        // two pointers
         while (left < right) {
             // comp area
             int curWidth = right - left;

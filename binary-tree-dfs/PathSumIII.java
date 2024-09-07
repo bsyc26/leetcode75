@@ -1,10 +1,10 @@
 import java.util.HashMap;
 
 /** Return the num of paths (any branch) sum up to targetSum*/
-public class PathSumIII { // leetcode 437
+public class Solution { // leetcode 437
+    // fields
     // data structures
     private HashMap<Long, Integer> preSumMap = new HashMap<>();
-    // fields
     private long pathSum = 0;
     private int numPath = 0;
     private int tgtSum; // path: preSum[i] - preSum[j] == tgtSum (i < j)

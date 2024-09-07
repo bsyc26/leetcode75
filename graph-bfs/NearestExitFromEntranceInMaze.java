@@ -4,7 +4,7 @@ import java.util.LinkedList;
 /** Return the num of steps in shortest path from entrance to nearest exit, or -1
   * m x n matrix maze, '.' is empty cell and '+' is wall, entrance[] is init [row, col]
   * exit is defined as an empty cell at border of maze */
-public class NearestExitFromEntranceInMaze { // leetcode 1926
+public class Solution { // leetcode 1926
     // fields
     private final int[][] DIRS = new int[][]{ {1, 0}, {-1, 0}, {0, 1}, {0, -1} };
     // bfs + adj-mat

@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 /** Return the min num of re-orienting roads to make every city visit city 0
   * connections[a, b] represents a road from a to b */
-public class ReorderRoutesToMakeAllPathsLeadToTheCityZero { // leetcode 1466
+public class Solution { // leetcode 1466
     // dfs + adj-list
-    public int minReorder(int n, int[][] connnections) { // T: O(V), S: O(VE).
+    public int minReorder(int n, int[][] connections) { // T: O(V), S: O(VE).
         // constants
         int V = n; // num of vertex
         // data structures

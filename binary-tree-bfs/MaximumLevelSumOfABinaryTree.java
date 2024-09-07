@@ -2,7 +2,7 @@ import java.util.Queue;
 import java.util.LinkedList;
 
 /** Return the min level (root is level 1) with all nodes in this level sum to max val */
-public class MaximumLevelSumOfABinaryTree { // leetcode 1161
+public class Solution { // leetcode 1161
     // bfs
     public int maxLevelSum(TreeNode root) { // T: O(N), S: O(N)
         // data structures

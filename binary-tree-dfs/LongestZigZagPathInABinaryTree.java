@@ -1,6 +1,6 @@
 /** Return the longest ZigZag path in given binary tree
   * ZigZag path: switch direction at each level, len is num of nodes - 1 */
-public class LongestZigZagPathInABinaryTree { // leetcode 1372
+public class Solution { // leetcode 1372
     // fields
     private int maxZigZagLen = 0;
     // dfs-division + return-values

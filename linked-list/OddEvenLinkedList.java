@@ -1,6 +1,6 @@
 /** Re-order the linked-list into starting with odd(1st) indices following by even indices, return head
   * T: O(N), S: O(1). */
-public class OddEvenLinkedList { // leetcode 328
+public class Solution { // leetcode 328
     // two-pointers:fast-slow
     public ListNode oddEvenList(ListNode head) { // T: O(N), S: O(1).
         // edge case
@@ -10,7 +10,7 @@ public class OddEvenLinkedList { // leetcode 328
         ListNode slow = head; // odd-1st
         ListNode fast = head.next; // even-2nd
         ListNode firstEven = fast; // keep 2nd loc to link odd and even
-        // two-pointers
+        // two pointers
         while (fast != null && fast.next != null) { // e.g. 1 -> 2 -> 3 -> 4
             slow.next = fast.next; // 1 -> 3
             slow = slow.next; // slow at 3

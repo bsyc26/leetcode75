@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 /** Return an int[] where elem is the num of pair successful with i-th spell
   * successful pair if spells[i] * potions[j] is at least success */
-public class SuccessfulPairsOfSpellsAndPotions { // leetcode 2300
+public class Solution { // leetcode 2300
     // binary-search:left-right-bound
     public int[] successfulPairs(int[] spells, int[] potions, long success) { // T: O(NlogN), S: O(N).
         // constants

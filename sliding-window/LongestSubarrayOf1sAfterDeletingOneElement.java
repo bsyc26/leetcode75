@@ -1,12 +1,12 @@
 /** Return the max len of subarray containing only 1's, else 0
   * should delete one elem from nums[] */
-public class LongestSubarrayOf1sAfterDeletingOneElement { // leetcode 1493
+public class Solution { // leetcode 1493
     // sliding-window
     public int longestSubarray(int[] nums) { // T: O(N), S: O(1).
         // constants
         int N = nums.length;
         // variables
-        int del0s = 0;
+        int del0s = 0; // num of del 0's
         int left = 0;
         int right = 0;
         int maxLen = 0;

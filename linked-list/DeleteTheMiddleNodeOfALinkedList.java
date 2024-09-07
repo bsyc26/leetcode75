@@ -1,5 +1,5 @@
 /** Delete the middle (right if tot even) node and return the head of modified linked list */
-public class DeleteTheMiddleNodeOfALinkedList { // leetcode 2095
+public class Solution { // leetcode 2095
     // two-pointers:fast-slow
     public ListNode deleteMiddle(ListNode head) { // T: O(N), S: O(1).
         // edge case
@@ -8,7 +8,7 @@ public class DeleteTheMiddleNodeOfALinkedList { // leetcode 2095
         // variables
         ListNode slow = head;
         ListNode fast = head.next.next;
-        // two-pointers
+        // two pointers
         while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;

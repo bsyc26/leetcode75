@@ -1,6 +1,6 @@
 /** Return an arr whose elem is equal to the product of all elems of nums[] except nums[i]
   * T: O(N), and no division op */
-public class ProductOfArrayExceptSelf { // leetcode 238
+public class Solution { // leetcode 238
     // prefix-prod
     public int[] productExceptSelf(int[] nums) { // T: O(N), S: O(N).
         // constants
@@ -22,7 +22,7 @@ public class ProductOfArrayExceptSelf { // leetcode 238
         return prodDeSelf;
     }
 
-    // opt:arr2state
+    // array2state
     public int[] productExceptSelf(int[] nums) { // T: O(N), S: O(1).
         // constants
         int N = nums.length;

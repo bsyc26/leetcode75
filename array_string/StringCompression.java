@@ -1,7 +1,7 @@
 /** Return the compressed len of new arr and modify in-place
-  * for consecutive repeating chars (freq > 1) in chars[], append char followed by freq (also char)
+  * for consecutive repeating chars in chars[], append char followed by freq (also char)
   * S: O(1) */
-public class StringCompression { // leetcode 443
+public class Solution { // leetcode 443
     // one-pointer:modify
     public int compress(char[] chars) { // T: O(N), S: O(1).
         // constants
@@ -9,7 +9,7 @@ public class StringCompression { // leetcode 443
         // variables
         int idx = 0;
         int len = 0;
-        // one-pointer
+        // scan modify
         while (idx < N) {
             int cnt = 1; // repetition of char, at least 1
             while (idx+cnt < N && chars[idx+cnt] == chars[idx])

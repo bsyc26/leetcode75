@@ -2,7 +2,7 @@ import java.util.Stack;
 
 /** Return the string after removing all '*'
   * remove op: remove the colsest non-star char to its left and star itself */
-public class RemovingStarsFromAString { // leetcode 2390
+public class Solution { // leetcode 2390
     // stack
     public String removeStars(String s) { // T: O(N), S: O(N).
         // data structures

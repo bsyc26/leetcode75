@@ -1,5 +1,5 @@
 /** Delete the node with key val and return the root node (possible update) */
-public class DeleteNodeInABST { // leetcode 450
+public class Solution { // leetcode 450
     // bst
     public TreeNode deleteNode(TreeNode root, int key) { // T: O(logN), S: O(1).
         // edge case

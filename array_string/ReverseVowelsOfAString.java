@@ -1,6 +1,6 @@
 /** Reverse all vowels in String s and return it
-  * vowels: 'a', 'e', 'i', 'o', 'u' */
-public class ReverseVowelsOfAString { // leetcode 345
+  * vowels: 'a', 'e', 'i', 'o', 'u', with their upper cases */
+public class Solution { // leetcode 345
     // fields
     private String VOWELS = "aeiouAEIOU";
     // two-pointers:left-right
@@ -11,7 +11,7 @@ public class ReverseVowelsOfAString { // leetcode 345
         char[] chars = s.toCharArray();
         int left = 0;
         int right = N-1;
-        // two-pointers
+        // two pointers
         while (left < right) {
             // find next couple of vowels
             while (left < N && VOWELS.indexOf(chars[left]) < 0)

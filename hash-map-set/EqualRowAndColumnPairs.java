@@ -1,9 +1,8 @@
-import java.util.Map;
 import java.util.HashMap;
 import java.util.Arrays;
 
 /** Return the num of pairs (row, col) where the row[] equals the col[] */
-public class EqualRowAndColumnPairs { // leetcode 2352
+public class Solution { // leetcode 2352
     // hash-set + string-compress
     public int equalPairs(int[][] grid) { // T: O(N2), S: O(N).
         // constants
@@ -11,7 +10,7 @@ public class EqualRowAndColumnPairs { // leetcode 2352
         // varaibles
         int pairCnt = 0;
         // data structures
-        Map<String, Integer> rowCntMap = new HashMap<>();
+        HashMap<String, Integer> rowCntMap = new HashMap<>();
         for (int[] row : grid) { 
             String rowStr = Arrays.toString(row); // convert int[] into String for hash
             rowCntMap.put(rowStr, rowCntMap.getOrDefault(rowStr,0)+1);

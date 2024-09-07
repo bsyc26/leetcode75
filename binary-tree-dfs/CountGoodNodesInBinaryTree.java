@@ -1,6 +1,6 @@
 /** Return the num of good nodes in a binary tree
   * good node: path from root to node has no value greater than node (root always is) */
-public class CountGoodNodesInBinaryTree { // leetcode 1448
+public class Solution { // leetcode 1448
     // fields
     private int numGood = 0;
     // dfs-traverse + field-values

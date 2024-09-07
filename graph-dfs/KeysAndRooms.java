@@ -3,14 +3,15 @@ import java.util.ArrayList;
 
 /** Return true if you can visit all room
   * room 0 is open, room[1..n-1] is locked, room[i] is the keys in room */
-public class KeysAndRooms { // leetcode 841
+public class Solution { // leetcode 841
     // fields
+    // data structures
     boolean[] visited;
     // dfs + adj-list
     public boolean canVisitAllRooms(List<List<Integer>> rooms) { // T: O(N), S: O(N).
         // constants
         int V = rooms.size();
-        // variables
+        // data structures
         visited = new boolean[V];
         // dfs
         dfs(rooms, 0);

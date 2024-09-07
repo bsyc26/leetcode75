@@ -1,6 +1,6 @@
 /** Return the merged string
   * merge in alter order, longer part is append to the end */
-public class MergeStringAlternately { // leetcode 1768
+public class Solution { // leetcode 1768
     // two-pointers:parallel
     public String mergeAlternately(String word1, String word2) { // T: O(M+N), S: O(1).
         // constants
@@ -10,7 +10,7 @@ public class MergeStringAlternately { // leetcode 1768
         StringBuilder sb = new StringBuilder();
         int p1 = 0;
         int p2 = 0;
-        // two-pointers
+        // two pointers
         while (p1 < N1 && p2 < N2) {
             sb.append(word1.charAt(p1));
             sb.append(word2.charAt(p2));
@@ -37,7 +37,7 @@ public class MergeStringAlternately { // leetcode 1768
         int N2 = word2.length();
         // variables
         StringBuilder sb = new StringBuilder();
-        // one-pointer
+        // scan update
         for (int i = 0; i < Math.max(N1, N2); i++) {
             if (i < N1)
                 sb.append(word1.charAt(i));

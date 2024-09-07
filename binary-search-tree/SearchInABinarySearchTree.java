@@ -1,5 +1,5 @@
 /** REturn the subtree rooted node with the target val, or null */
-public class SearchInABinarySearchTree { // leetcode 700
+public class Solution { // leetcode 700
     // bst
     public TreeNode searchBST(TreeNode root, int val) { // T: O(logN), S: O(1).
         // edge case

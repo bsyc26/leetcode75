@@ -1,15 +1,16 @@
 /** Return the tot num of provinces
   * province: connected cities
   * isConnected[i][j]: 1 means connected, 0 means not */
-public class NumberOfProvinces { // leetcode 547
+public class Solution { // leetcode 547
     // fields
+    // data structures
     boolean[] visited;
     int numConn = 0;
     // dfs + adj-mat
     public int findCircleNum(int[][] isConnected) { // T: O(N2), S: O(N).
         // constants
         int V = isConnected.length;
-        // variables
+        // data structures
         visited = new boolean[V];
         // dfs
         for (int i = 0; i < V; i++)

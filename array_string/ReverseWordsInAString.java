@@ -6,7 +6,7 @@ import java.util.ArrayDeque;
 
 /** Reverse the order of words in string s, concatenated by one space
   * word: seq of non-space chars, sep by at least one space */
-public class ReverseWordsInAString { // leetcode 151
+public class Solution { // leetcode 151
     // two-pointers:slow-fast
     public String reverseWords(String s) { // T: O(N), S: O(N).
         // variables
@@ -24,7 +24,7 @@ public class ReverseWordsInAString { // leetcode 151
         char[] chars = sb.toString().toCharArray();
         int slow = 0;
         int fast = 0;
-        // two-pointers
+        // two pointers
         while (slow < sz && fast < sz) {
             if (fast+1 == sz || chars[fast+1] == ' ') { // range a word or reach end
                 reverseWords(chars, slow, fast);
@@ -38,7 +38,7 @@ public class ReverseWordsInAString { // leetcode 151
         return String.valueOf(chars);
     }
     private void reverseWords(char[] chars, int left, int right) { // reverse [left, right]
-        // two-pointers
+        // two pointers
         while (left < right) {
             // swap char
             char tmp = chars[left];

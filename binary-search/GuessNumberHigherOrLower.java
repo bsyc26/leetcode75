@@ -1,11 +1,13 @@
 /** Return the num pick between 1 to n */
-public class GuessNumberHigherOrLower { // leetcode 374
+public class Solution extends GuessGame { // leetcode 374
     // binary search
     public int guessNumber(int n) { // T: O(logN), S: O(1).
+        // constants
+        int N = n;
         // variables
         int lo = 1;
-        int hi = n;
-        // binary-search
+        int hi = N; // [1..N]
+        // binary search
         while (lo <= hi) {
             int mid = lo + (hi-lo)/2;
             int comp = guess(mid);

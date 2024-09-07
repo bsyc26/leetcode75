@@ -2,25 +2,26 @@ import java.util.Arrays;
 
 /** Return the max num of ops can perform on nums[]
   * one ops: remove two num sum equals k */
-public class MaxNumberOfKSumPairs { // leetcode 1679
+public class Solution { // leetcode 1679
     // two-pointers:left-right + sort
     public int maxOperations(int[] nums, int k) { // T: O(NlogN), S: O(N).
         // constants
         int N = nums.length;
+        int TGT = k;
         // variables
-        int[] copy = Arrays.copyOf(nums, N);
-        Arrays.sort(copy);
+        int[] arr = Arrays.copyOf(nums, N);
+        Arrays.sort(arr);
         int left = 0;
         int right = N-1;
         int cnt = 0; // num of remove ops
-        // two-pointers
+        // two pointers
         while (left < right) {
-            long curSum = copy[left] + copy[right];
-            if (curSum > k) {
+            long curSum = arr[left] + arr[right];
+            if (curSum > TGT) {
                 --right;
-            } else if (curSum < k) {
+            } else if (curSum < TGT) {
                 ++left;
-            } else {
+            } else { // curSum == TGT
                 --right;
                 ++left;
                 ++cnt;

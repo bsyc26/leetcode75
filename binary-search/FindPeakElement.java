@@ -1,7 +1,7 @@
 /** Return the idx of the peak elem (any if mutiple)
   * peak elem: strictly larger than its neighbor, nums[-1] = nums[N] = -inifity
   * T: O(logN) */
-public class FindPeakElement { // leetcode 162
+public class Solution { // leetcode 162
     // binary-search
     public int findPeakElement(int[] nums) { // T: O(logN), S: O(1).
         // constants

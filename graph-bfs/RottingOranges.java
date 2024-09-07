@@ -4,7 +4,7 @@ import java.util.LinkedList;
 /** Return the min num of minutes to rot all orange, -1 if impossible
   * m x n grid, grid[i]: 0 for empty, 1 for fresh, 2 for rotten
   * each minute any fresh will be rotten by 4-dirts */
-public class RottingOranges { // leetcode 994
+public class Solution { // leetcode 994
     // fields
     private final int[][] DIRS = new int[][]{{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
     // bfs

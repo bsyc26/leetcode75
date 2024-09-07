@@ -6,7 +6,7 @@ import java.util.HashSet;
 /** Return the ans to all queries, or -1.0
   * equations[i] = [A, B] and values[i] = A/B (double)
   * queries[i] = [C, D] ans is C/D */
-public class EvaluateDivision { // leetcode 399
+public class Solution { // leetcode 399
     // dfs + adj-list
     public double[] calcEquation( // T: O(VE), S: O(VE).
             List<List<String>> equations, double[] values, List<List<String>> queries) {
