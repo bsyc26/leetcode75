@@ -1,19 +1,25 @@
-/** Reverse all vowels in String s and return it
-  * vowels: 'a', 'e', 'i', 'o', 'u', with their upper cases */
-public class Solution { // leetcode 345
-    // fields
+// leetcode 345
+// two-pointers:left-right
+// T: O(N) // N: s.length()
+// S: O(N) // N: s.length()
+
+class Solution {
+    // field
     private String VOWELS = "aeiouAEIOU";
-    // two-pointers:left-right
-    public String reverseVowels(String s) { // T: O(N), S: O(1).
-        // constants
+
+    /** Reverse all vowels in String s and return it
+      * vowels: 'a', 'e', 'i', 'o', 'u', with their upper cases */
+    public String reverseVowels(String s) {
+        // const
         int N = s.length();
-        // variables
+        // res
         char[] chars = s.toCharArray();
+        // vars
         int left = 0;
         int right = N-1;
-        // two pointers
+        // two-pointers:left-right
         while (left < right) {
-            // find next couple of vowels
+            // find next vowel pair
             while (left < N && VOWELS.indexOf(chars[left]) < 0)
                 ++left;
             while (right >= 0 && VOWELS.indexOf(chars[right]) < 0)
@@ -24,7 +30,7 @@ public class Solution { // leetcode 345
                 chars[left] = chars[right];
                 chars[right] = tmp;
             }
-            // step pointers
+            // step ptrs
             ++left;
             --right;
         }

@@ -1,48 +1,39 @@
-/** Return the merged string
-  * merge in alter order, longer part is append to the end */
-public class Solution { // leetcode 1768
-    // two-pointers:parallel
-    public String mergeAlternately(String word1, String word2) { // T: O(M+N), S: O(1).
-        // constants
-        int N1 = word1.length();
-        int N2 = word2.length();
-        // variables
-        StringBuilder sb = new StringBuilder();
-        int p1 = 0;
-        int p2 = 0;
-        // two pointers
-        while (p1 < N1 && p2 < N2) {
-            sb.append(word1.charAt(p1));
-            sb.append(word2.charAt(p2));
-            ++p1;
-            ++p2;
-        }
-        // cope with the left
-        while (p1 < N1) {
-            sb.append(word1.charAt(p1));
-            ++p1;
-        }
-        while (p2 < N2) {
-            sb.append(word2.charAt(p2));
-            ++p2;
-        }
-        // return
-        return sb.toString();
-    }
+// leetcode 1768
+// two-pointers:first-second
+// T: O(M+N) // M: word1.length(), N: word2.length() // one-pass
+// S: O(1)
 
-    // one-pointer:update
-    public String mergeAlternately(String word1, String word2) { // T: O(M+N), S: O(1).
-        // constants
+class Solution {
+    /** Return the merged string
+      * merge in alter order, longer part is append to the end */
+    public String mergeAlternately(String word1, String word2) {
+        // const
         int N1 = word1.length();
         int N2 = word2.length();
-        // variables
+        // vars
+        int first = 0;
+        int second = 0;
+        // res
         StringBuilder sb = new StringBuilder();
-        // scan update
-        for (int i = 0; i < Math.max(N1, N2); i++) {
-            if (i < N1)
-                sb.append(word1.charAt(i));
-            if (i < N2)
-                sb.append(word2.charAt(i));
+        // two-pointers:first-second
+        while (first < N1 && second < N2) {
+            // parallel append
+            if (first < N1)
+                sb.append(word1.charAt(first));
+            if (second < N2)
+                sb.append(word2.charAt(second));
+            // step ptrs
+            ++first;
+            ++second;
+        }
+        // tail op
+        while (first < N1) {
+            sb.append(word1.charAt(first));
+            ++first;
+        }
+        while (second < N2) {
+            sb.append(word2.charAt(second));
+            ++second;
         }
         // return
         return sb.toString();
